@@ -15,8 +15,9 @@ public class ProjectListener implements StartupActivity {
 
     @Override
     public void runActivity(@NotNull Project project) {
-        // 触发数据加载当做
-        BookmarkPersistence.getInstance(project);
+        // 触发数据加载
+        BookmarkPersistence instance = BookmarkPersistence.getInstance(project);
+
     }
 
 }

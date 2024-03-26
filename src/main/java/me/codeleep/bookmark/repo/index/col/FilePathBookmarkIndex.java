@@ -31,7 +31,7 @@ public final class FilePathBookmarkIndex extends GroupBookmarkIndex {
 
 
     @Override
-    public Function<? super Bookmark, String> index() {
+    public Function<? super Bookmark, Object> index() {
         return Bookmark::getFilePath;
     }
 }

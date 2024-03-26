@@ -2,6 +2,8 @@ package me.codeleep.bookmark.repo.index.col;
 
 import com.intellij.openapi.components.Service;
 import com.intellij.openapi.project.Project;
+import me.codeleep.bookmark.common.BookmarkEnum;
+import me.codeleep.bookmark.common.Constant;
 import me.codeleep.bookmark.repo.index.GroupBookmarkIndex;
 import me.codeleep.bookmark.repo.model.Bookmark;
 
@@ -20,16 +22,16 @@ public final class ParentIdBookmarkIndex extends GroupBookmarkIndex {
         return project.getService(ParentIdBookmarkIndex.class);
     }
 
-    public List<Bookmark> findByParentId(String filePath) {
-        if (filePath == null) {
+    public List<Bookmark> findByParentId(String parentId) {
+        if (parentId == null) {
             return null;
         }
-        return index.get(filePath);
+        return index.get(parentId);
     }
 
 
     @Override
-    public Function<? super Bookmark, String> index() {
+    public Function<? super Bookmark, Object> index() {
         return Bookmark::getParentId;
     }
 }
