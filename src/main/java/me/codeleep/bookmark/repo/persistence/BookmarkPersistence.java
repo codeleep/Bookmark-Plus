@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 @State(
         name = "BookmarkPersistence",
         defaultStateAsResource = true,
-        storages = {@Storage("/Users/weidian/Desktop/BookmarkPersistence.xml")}
+        storages = {@Storage("BookmarkPersistence.xml")}
 )
 public final class BookmarkPersistence implements PersistentStateComponent<BookmarkRepoPo> {
 
